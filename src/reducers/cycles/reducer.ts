@@ -1,5 +1,5 @@
 import { Cycle } from '../../contexts/useTimer'
-import { ActionTypes } from './action'
+import { ActionTypes, ActionTypesProps } from './action'
 import { produce } from 'immer'
 
 interface CycleState {
@@ -7,7 +7,7 @@ interface CycleState {
   activeCycleId: string | null
 }
 
-export function cyclesReducer(state: CycleState, action: any) {
+export function cyclesReducer(state: CycleState, action: ActionTypesProps) {
   switch (action.type) {
     case ActionTypes.ADD_NEW_CYCLE:
       return produce(state, (draft) => {
